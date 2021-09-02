@@ -1,0 +1,8 @@
+version: "3"
+services:
+    1-html-review-cncappel:
+        build: .
+        ports: 
+            - "8000:80"
+        volumes: 
+            - ./public:/var/www/html
