@@ -26,6 +26,6 @@ In Canvas, submit a link to your GitHub repository.
 
 * In your custom CSS file, also write at least one declaration for an element by CSS class and one declaration for an element by id. Use those elements in your pages.
 
-* The pages should include at least two images (overall). Show the image thumbnails on the page. Link the thumbnails to larger versions of the same images. Include citation or attribution for each image. (This is _**NOT**_ `alt` text, and should be visible to anyone viewing the page.)
+* The pages should include at least two images (overall). Show the image thumbnails on the page. Link the thumbnails to larger versions of the same images. Include citation or attribution for each image. (This is _**NOT**_ `alt` text, and should be visible to anyone viewing the page)
 
 [bootstrap]:https://getbootstrap.com/docs/4.5/getting-started/introduction/
