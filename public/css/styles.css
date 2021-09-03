@@ -32,7 +32,7 @@
 
 #addRow{
     border-color: #CED4D9; 
-    color: #CED4D9; 
+    color: #212529; 
     background-color: white; 
     padding: 5px 10px; 
     border-radius: .25rem;
@@ -86,4 +86,10 @@ footer{
 
 #userProfile {
     font-size: 30px;
+}
+
+.welcome{
+    display: inline-block;
+    width: 900px;
+    font-size: 50px;
 }
