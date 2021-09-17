@@ -1,0 +1,17 @@
+{
+    "offers": [{
+        "id": 1,
+        "name":"Clara Cappel",
+        "salary": 20000,
+        "bonus": "5%",
+        "company": "Dell",
+        "offerDate": "2021-09-08"
+    },
+    {
+        "id": 2,
+        "name":"Jim Brown",
+        "salary": 50000,
+        "bonus": "7%",
+        "company": "Microsoft",
+        "offerDate": "2021-10-08"
+ }]}
