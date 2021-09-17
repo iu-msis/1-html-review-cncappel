@@ -2,6 +2,6 @@ FROM php:7.4-apache
 
 LABEL maintainer="Clara Cappel"
 
-WORKDIR /var/www/html
+COPY app /srv/app
 
-COPY public .
+COPY docker/apache/vhost.conf /etc/apache2/site-available/000-default.conf
