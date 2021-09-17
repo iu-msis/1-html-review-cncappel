@@ -8,7 +8,11 @@
 </head>
 <nav class="navbar navbar-expand-lg navbar-light bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="index.html">D&S:</a>
+    <a class="navbar-brand" href="index.html">      
+      <center class="title-image bg-dark">
+        <img class="rounded rounded-circle" src="./img/clara.jpeg">
+      </center>
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -23,10 +27,7 @@
         <li class="nav-item">
           <a class="nav-link" href="user-info.html">User Info</a>
         </li>
-      </ul>
-      <center class="title-image bg-dark">
-        <img class="rounded rounded-circle" src="./img/clara.jpeg">
-      </center>
+      </ul> 
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search For Page" aria-label="Search">
         <button class="btn btn-outline-light" type="submit">Search</button>
@@ -35,10 +36,50 @@
   </div>
 </nav>
 <body>
-    <br>
-    <br>
-    <br>
-    <table class="table table-striped">
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <a href="./img/GreatGatsby.jpg"><img src="./img/GreatGatsby.jpg" class="d-block w-100" style="height: 700px;" alt="Gatsby"></a> 
+        <!-- “The Great Gatsby Backgrounds.” HipWallpaper, hipwallpaper.com/the-great-gatsby-backgrounds/.  -->
+      </div> 
+      <div class="carousel-item">
+        <a href="./img/Caught.jpg"><img src="./img/Caught.jpg" class="d-block w-100" style="height: 700px;" alt="Gatsby"></a>
+        <!-- Reid, Meg. “How to Design a Book Cover: The Ultimate Guide.” 99designs, 99designs, 24 Jan. 2020, 99designs.com/blog/book-design/book-cover-design/.  -->
+      </div>
+      <div class="carousel-item">
+        <a href="./img/MobyDick.jpg"><img src="./img/MobyDick.jpg" class="d-block w-100" style="height: 700px;" alt="Moby"></a>
+        <!-- Safina, Carl. “Melville's Whale Was a Warning We Failed to Heed.” The New York Times, The New York Times, 2 May 2020, www.nytimes.com/2020/05/02/books/review/herman-melville-moby-dick.html.  -->
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+    </div>
+    <span>
+    <center>
+      <a href="./img/GreatGatsby.jpg" target="_blank">./img/GreatGatsby.jpg</a>
+      <a href="./img/Caught.jpg" target="_blank">./img/Caught.jpg</a> 
+      <a href="./img/MobyDick.jpg" target="_blank">./img/MobyDick.jpg</a>
+    </center>
+    </span>
+    <center>
+      <div>
+        "The Great Gatsby Backgrounds."" HipWallpaper.
+      </div>
+      <div>
+        Reid, Meg. "How to Design a Book Cover: The Ultimate Guide." 99designs, 99designs, 24 Jan. 2020,
+      </div>
+      <div>
+        Safina, Carl. "Melville's Whale Was a Warning We Failed to Heed." The New York Times, The New York Times, 2 May 2020,
+      </div>
+    </center> 
+    <div id="booksTable">
+      <table class="table table-striped">
         <thead>
           <tr>
             <th scope="col">Title</th>
@@ -47,6 +88,7 @@
             <th scope="col">Publisher</th>
             <th scope="col">Page Count</th>
             <th scope="col">MSRP</th>
+            <th scope="col">Add Row</th>
           </tr>
         </thead>
         <tbody>
@@ -57,6 +99,7 @@
             <td>Charles Scribner's Sons</td>
             <td>240</td>
             <td>$19.95</td>
+            <td></td>
           </tr>
           <tr>
             <th scope="row">Moby Dick</th>
@@ -65,6 +108,7 @@
             <td>Penguin Random House</td>
             <td>752</td>
             <td>$32.99</td>
+            <td></td>
           </tr>
           <tr>
             <th scope="row">The Rose Code</th>
@@ -73,14 +117,16 @@
             <td>Harper Collins</td>
             <td>383</td>
             <td>$17.99</td>
+            <td></td>
           </tr>
           <tr>
-            <th scope="row">The Great Gatsby</th>
+            <th scope="row">Caught</th>
             <td>Harper Collins</td>
             <td>1925</td>
             <td>Harper Collins</td>
             <td>240</td>
             <td>$19.95</td>
+            <td></td>
           </tr>
           <tr>
             <th scope="row">War & Peace</th>
@@ -89,6 +135,7 @@
             <td>Simon & Schuster</td>
             <td>1050</td>
             <td>$99.99</td>
+            <td></td>
           </tr>
           <tr>
             <th scope="row">Hamlet</th>
@@ -97,6 +144,7 @@
             <td>Springer Nature</td>
             <td>98</td>
             <td>$10.95</td>
+            <td></td>
           </tr>
           <tr>
             <th scope="row">The Divine Comedy</th>
@@ -105,8 +153,70 @@
             <td>N/A</td>
             <td>153</td>
             <td>$15.99</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>
+              <form>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Title">
+                </div>
+              </form>
+            </td>
+            <td>
+              <form>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Author(s)">
+                </div>
+              </form>
+            </td>
+            <td>
+              <form>
+                <div class="form-group">
+                  <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Enter Year Published">
+                </div>
+              </form>
+            </td>
+            <td>
+            <form>
+              <div class="form-group">
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Publisher">
+              </div>
+            </form>
+          </td>
+          <td>
+            <form>
+              <div class="form-group">
+                <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Enter Page Count">
+              </div>
+            </form>
+          </td>
+          <td>
+            <form>
+              <div class="form-group">
+                <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Enter MSRP">
+              </div>
+            </form>
+          </td>
+          <td>
+            <button id="addRow" type="submit">Add Row</button>
+          </td>
           </tr>
         </tbody>
       </table>
-</body>
+    </div>
+  </body>
+  <footer class="footer mt-auto py-3 bg-light">
+    <div class="container">
+      <span class="text-muted">
+        <center>
+          <a class="phoneNum" href="mailto:cncappel@iu.edu">cncappel@iu.edu</a>
+          <br>
+          <button class="phoneNum">(970) 376-3571</button>
+          <br>
+        <span>All work produced by Clara Cappel</span>
+      </span>
+    </center>
+    </div>
+  </footer>
 </html>
