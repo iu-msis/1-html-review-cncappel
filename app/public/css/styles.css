@@ -127,3 +127,14 @@ th[role=columnheader]:not(.no-sort):hover:after {
 	visibility: visible;
 	opacity: 1;
 }
+
+#exampleFormControlInput1{
+    width: 200px;
+}
+
+#addRow{
+    margin-top: 20px;
+    border-color: #212529;
+    border-radius: 5px;
+    background-color: white;
+}
