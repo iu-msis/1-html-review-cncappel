@@ -154,18 +154,21 @@
           </tr>
         </thead>
         <tbody>
-          <tr id="offerApp" v-for="book in books">
+          <tr id="booksApp" v-for="book in books">
             <td>{{ book.title }}</td>
             <td>{{ book.author }}</td>
             <td>{{ book.yearPublished }}</td>
             <td>{{ book.publisher }}</td>
             <td>{{ book.pageCount }}</td>
             <td>{{ book.MSRP }}</td>
+            <td>
+              <button type="button" class="btn btn-light">Edit</button>
+              <button type="button" class="btn btn-light">Delete</button>
+            </td>
         </tr>
         </tbody>
       </table>
     </div>
-  </div>
     <form v-on:submit.prevent="postNewBook">
       <div class="mb-3">
         <label for="title" class="form-label">Title</label>
@@ -193,6 +196,7 @@
       </div>
       <button type="submit" class="btn btn-primary">Add Book</button>
     </form>
+  </div>
       <script src='js/index.js'></script>
       <script src='js/tablesort.min.js'></script>
       <script> new Tablesort(document.getElementById('bookTableSorted'));</script>
