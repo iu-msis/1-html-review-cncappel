@@ -138,3 +138,15 @@ th[role=columnheader]:not(.no-sort):hover:after {
     border-radius: 5px;
     background-color: white;
 }
+
+#formAlign{
+    display: flex !important;
+}
+
+#exampleFormControlInput1.form-control.me-2 {
+    display: flex;
+}
+
+.form-control {
+    display: flex !important;
+}

@@ -1,37 +1,14 @@
 const Offer = {
     data() {
       return {
-        "person": {},
-        "offers": [
-                {
-                    "id": 1,
-                    "name": "Janet Doe",
-                    "salary": 120000,
-                    "bonus": 9000,
-                    "company":"EY",
-                    "offerDate": "2021-09-08"
-                },
-                {
-                    "id": 2,
-                    "name": "Jordan Doe",
-                    "salary": 80000,
-                    "bonus": 2000,
-                    "company":"IU",
-                    "offerDate": "2021-08-09"
-                }
-            ]
+        "person": {}
         }
     },
     computed: {
         prettyBirthday() {
-        // change date format
             return dayjs(this.person.dob.date).format('DD MMM YYYY')
         }
-        // userProfile() {
-        //     return url(this.person.picture.large)
-        //     }
     },
-
     methods: {
         fetchUserData() {
         fetch ('https://randomuser.me/api/')
@@ -42,12 +19,11 @@ const Offer = {
         })
         .catch((err) => {
             console.error(err);
-        })
-    }
-    },
+        })}
+ },
     created() {
-        this.fetchUserData()
-    } //end created
+        this.fetchUserData();
+    },
 } // end Offer config
   
 Vue.createApp(Offer).mount('#offerApp');
