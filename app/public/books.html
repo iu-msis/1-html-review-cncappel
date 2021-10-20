@@ -162,8 +162,8 @@
             <td>{{ book.pageCount }}</td>
             <td>{{ book.MSRP }}</td>
             <td>
-              <button type="button" class="btn btn-light">Edit</button>
-              <button type="button" class="btn btn-light">Delete</button>
+              <button type="button" v-on:click="handleEditBooks(book)" class="btn btn-light">Edit</button>
+              <button type="button" v-on:click="postDeleteBook(book)" class="btn btn-light">Delete</button>
             </td>
         </tr>
         </tbody>
