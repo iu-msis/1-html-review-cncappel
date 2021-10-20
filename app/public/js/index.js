@@ -2,7 +2,8 @@ const SomeApp = {
     data() {
       return {
         books: [],
-        bookForm: {}
+        bookForm: {},
+        selectedBook: null
       }
     },
     computed: {},
@@ -37,7 +38,47 @@ const SomeApp = {
                 // reset the form
                 this.bookForm = {};
               });
+          },
+          handleEditBooks(book) {
+            this.selectedBook = book;
+            this.bookForm = Object.assign({}, this.selectedBook);
+          },
+          handleResetEdit() {
+            this.selectedBook = null;
+            this.bookForm = {};
+          },
+          postBooks(evt) {
+            console.log ("Test:", this.selectedBook);
+          if (this.selectedBook) {
+              this.postEditBooks(evt);
+          } else {
+              this.postNewBook(evt);
           }
+        },
+        postDeleteBook(o) {  
+          if ( !confirm("Are you sure you want to delete the offer from " + o.title + "?") ) {
+              return;
+          }  
+          
+          console.log("Delete!", o);
+  
+          fetch('api/books/delete.php', {
+              method:'POST',
+              body: JSON.stringify(o),
+              headers: {
+                "Content-Type": "application/json; charset=utf-8"
+              }
+            })
+            .then( response => response.json() )
+            .then( json => {
+              console.log("Returned from post:", json);
+              // TODO: test a result was returned!
+              this.books = json;
+              
+              // reset the form
+              this.handleResetEdit();
+            });
+        },
     },
     created() {
         this.fetchBookData();
