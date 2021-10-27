@@ -56,10 +56,10 @@ const SomeApp = {
           }
         },
         postDeleteBook(o) {  
-          if ( !confirm("Are you sure you want to delete the offer from " + o.title + "?") ) {
+          if ( !confirm("Are you sure you want to delete the book from " + o.title + "?") ) {
               return;
           }  
-          
+
           console.log("Delete!", o);
   
           fetch('api/books/delete.php', {

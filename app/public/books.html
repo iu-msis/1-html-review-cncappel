@@ -140,62 +140,70 @@
   </center>
   </div>
   <div id="booksApp">
-    <div id="booksTable">
-      <table id="bookTableSorted" class="sortable-theme-dark">
-        <thead>
-          <tr>
-            <th scope="col">Title</th>
-            <th scope="col">Author(s)</th>
-            <th scope="col">Year Published</th>
-            <th scope="col">Publisher</th>
-            <th scope="col">Page Count</th>
-            <th scope="col">MSRP</th>
-            <th scope="col">Add Row</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr id="booksApp" v-for="book in books">
-            <td>{{ book.title }}</td>
-            <td>{{ book.author }}</td>
-            <td>{{ book.yearPublished }}</td>
-            <td>{{ book.publisher }}</td>
-            <td>{{ book.pageCount }}</td>
-            <td>{{ book.MSRP }}</td>
-            <td>
-              <button type="button" v-on:click="handleEditBooks(book)" class="btn btn-light">Edit</button>
-              <button type="button" v-on:click="postDeleteBook(book)" class="btn btn-light">Delete</button>
-            </td>
-        </tr>
-        </tbody>
-      </table>
+    <div class="container">
+    <div class="row">
+      <div class="col-lg">
+        <div id="booksTable">
+          <table id="bookTableSorted" class="sortable-theme-dark">
+            <thead>
+              <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Author(s)</th>
+                <th scope="col">Year Published</th>
+                <th scope="col">Publisher</th>
+                <th scope="col">Page Count</th>
+                <th scope="col">MSRP</th>
+                <th scope="col">Add Row</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr id="booksApp" v-for="book in books">
+                <td>{{ book.title }}</td>
+                <td>{{ book.author }}</td>
+                <td>{{ book.yearPublished }}</td>
+                <td>{{ book.publisher }}</td>
+                <td>{{ book.pageCount }}</td>
+                <td>{{ book.MSRP }}</td>
+                <td>
+                  <button type="button" v-on:click="handleEditBooks(book)" class="btn btn-light">Edit</button>
+                  <button type="button" v-on:click="postDeleteBook(book)" class="btn btn-light">Delete</button>
+                </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-lg">
+        <form v-on:submit.prevent="postNewBook">
+          <div class="mb-3">
+            <label for="title" class="form-label">Title <span class="required">*</span></label>
+            <input type="text" v-model="bookForm.title" class="form-control" id="title" required="required">
+          </div>
+          <div class="mb-3">
+            <label for="author" class="form-label">Author<span class="required">*</span></label>
+            <input type="text" v-model="bookForm.author" class="form-control" id="author" required="required">
+          </div>
+          <div class="mb-3">
+            <label for="yearPublished" class="form-label">Year Published<span class="required">*</span></label>
+            <input type="number" v-model="bookForm.yearPublished" class="form-control" id="yearPublished" required="required">
+          </div>
+          <div class="mb-3">
+            <label for="publisher" class="form-label">Publisher<span class="required">*</span></label>
+            <input type="text" v-model="bookForm.publisher" class="form-control" id="publisher" required="required">
+          </div>
+          <div class="mb-3">
+            <label for="pageCount" class="form-label">Page Count<span class="required">*</span></label>
+            <input type="number" v-model="bookForm.pageCount" class="form-control" id="pageCount" required="required">
+          </div>
+          <div class="mb-3">
+            <label for="MSRP" class="form-label">MSRP<span class="required">*</span></label>
+            <input type="text" v-model="bookForm.MSRP" class="form-control" id="MSRP" required="required">
+          </div>
+          <button type="submit" class="btn btn-primary">Add Book</button>
+        </form>
+      </div>
     </div>
-    <form v-on:submit.prevent="postNewBook">
-      <div class="mb-3">
-        <label for="title" class="form-label">Title</label>
-        <input type="text" v-model="bookForm.title" class="form-control" id="title">
-      </div>
-      <div class="mb-3">
-        <label for="author" class="form-label">Author</label>
-        <input type="text" v-model="bookForm.author" class="form-control" id="author">
-      </div>
-      <div class="mb-3">
-        <label for="yearPublished" class="form-label">Year Published</label>
-        <input type="number" v-model="bookForm.yearPublished" class="form-control" id="yearPublished">
-      </div>
-      <div class="mb-3">
-        <label for="publisher" class="form-label">Publisher</label>
-        <input type="text" v-model="bookForm.publisher" class="form-control" id="publisher">
-      </div>
-      <div class="mb-3">
-        <label for="pageCount" class="form-label">Page Count</label>
-        <input type="number" v-model="bookForm.pageCount" class="form-control" id="pageCount">
-      </div>
-      <div class="mb-3">
-        <label for="MSRP" class="form-label">MSRP</label>
-        <input type="text" v-model="bookForm.MSRP" class="form-control" id="MSRP">
-      </div>
-      <button type="submit" class="btn btn-primary">Add Book</button>
-    </form>
+  </div>
   </div>
       <script src='js/index.js'></script>
       <script src='js/tablesort.min.js'></script>

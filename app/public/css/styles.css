@@ -50,7 +50,7 @@
 }
 
 #booksTable {
-    margin: 30px;
+    margin-top: 50px;
 }
 
 .userIcons {
@@ -149,4 +149,20 @@ th[role=columnheader]:not(.no-sort):hover:after {
 
 .form-control {
     display: flex !important;
+}
+
+span.required{
+    color: red;
+}
+
+input:required{
+    border: 1px dotted red;
+}
+
+input:required:invalid{
+    background-color: aliceblue;
+}
+
+form {
+    margin-top: 50px;
 }
