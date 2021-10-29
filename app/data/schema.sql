@@ -20,3 +20,9 @@ INSERT INTO books (bookID, title, author, yearPublished, publisher, pageCount, M
 (5, 'War & Peace', 'Leo Tolstoy', 1875, 'Simon & Schuster', 1050, '$99.99'),
 (6, 'Hamlet', 'William Shakespeare', 1601, 'Springer Nature', 98, '$10.95'),
 (7, 'The Devine Comedy', 'Dante Alighieri', 1320, 'N/A', 153, '$15.99');
+
+ALTER TABLE books ADD COLUMN status enumm('Unanswered', 'Accepted','Declined','Negotiating')
+
+SELECT name, username, MAX(salary) AS maxSalary, COUNT(1) AS offerCount
+FROM student LEFT OUTER JOIN offer ON student.id = offer.studentId
+GROUP BY usernamme, name;
