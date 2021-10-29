@@ -3,7 +3,7 @@ const SomeApp = {
       return {
         books: [],
         bookForm: {},
-        selectedBook: null
+        selectedBook: null,
       }
     },
     computed: {},
@@ -36,11 +36,11 @@ const SomeApp = {
                 this.books = json;
                 
                 // reset the form
-                this.bookForm = {};
+                this.handleResetEdit();
               });
           },
-          handleEditBooks(book) {
-            this.selectedBook = book;
+          handleEditBook(books) {
+            this.selectedBook = books;
             this.bookForm = Object.assign({}, this.selectedBook);
           },
           handleResetEdit() {
@@ -58,7 +58,7 @@ const SomeApp = {
         postEditBook(evt) {
           this.bookForm.id = this.selectedBook.id;
           
-          console.log("Editing!", this.offerForm);
+          console.log("Editing!", this.bookForm);
   
           fetch('api/book/update.php', {
               method:'POST',
@@ -71,7 +71,7 @@ const SomeApp = {
             .then( json => {
               console.log("Returned from post:", json);
               // TODO: test a result was returned!
-              this.offers = json;
+              this.books = json;
               
               // reset the form
               this.handleResetEdit();
@@ -100,10 +100,6 @@ const SomeApp = {
               // reset the form
               this.handleResetEdit();
             });
-        },
-        selectBook(o) {
-          this.selectedBook = o;
-          this.bookForm = Object.assign({}, this.selectedBook);
         },
     },
     created() {

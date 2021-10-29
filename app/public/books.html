@@ -157,7 +157,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr id="booksApp" v-for="book in books">
+              <tr v-for="book in books">
                 <td>{{ book.title }}</td>
                 <td>{{ book.author }}</td>
                 <td>{{ book.yearPublished }}</td>
@@ -165,7 +165,7 @@
                 <td>{{ book.pageCount }}</td>
                 <td>{{ book.MSRP }}</td>
                 <td>
-                  <button type="button" v-on:click="handleEditBooks(book)" class="btn btn-light">Edit</button>
+                  <button type="button" v-on:click="handleEditBook(book)" class="btn btn-light">Edit</button>
                   <button type="button" v-on:click="postDeleteBook(book)" class="btn btn-light">Delete</button>
                 </td>
             </tr>
@@ -199,7 +199,10 @@
             <label for="MSRP" class="form-label">MSRP<span class="required">*</span></label>
             <input type="text" v-model="bookForm.MSRP" class="form-control" id="MSRP" required="required">
           </div>
-          <button type="submit" class="btn btn-primary">Add Book</button>
+          <button type="submit" class="btn btn-primary">{{ selectedBook === null ? "Add" : "Edit" }} Book</button>
+          <button type="button" class="btn btn-outline-secondary" 
+            v-if="selectedBook"
+            v-on:click="handleResetEdit">Cancel</button>
         </form>
       </div>
     </div>
